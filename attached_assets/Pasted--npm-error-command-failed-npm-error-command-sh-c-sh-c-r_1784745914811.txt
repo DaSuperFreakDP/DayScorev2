@@ -1,0 +1,50 @@
+
+npm error command failed
+npm error command sh -c sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+npm error A complete log of this run can be found in: /Users/builder/.npm/_logs/2026-07-22T18_44_30_341Z-debug-0.log
+
+
+Build failed :|
+Step 2 script `Install dependencies` exited with status code 1
+
+> workspace@0.0.0 preinstall
+> sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+
+Use pnpm instead
+npm error code 1
+npm error path /Users/builder/clone
+npm error command failed
+npm error command sh -c sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+npm error A complete log of this run can be found in: /Users/builder/.npm/_logs/2026-07-22T18_44_30_341Z-debug-0.log
+
+
+Build failed :|
+Step 2 script `Install dependencies` exited with status code 1
+
+> workspace@0.0.0 preinstall
+> sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+
+Use pnpm instead
+npm error code 1
+npm error path /Users/builder/clone
+npm error command failed
+npm error command sh -c sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+npm error A complete log of this run can be found in: /Users/builder/.npm/_logs/2026-07-22T18_44_30_341Z-debug-0.log
+
+
+Build failed :|
+Step 2 script `Install dependencies` exited with status code 1
+
+> workspace@0.0.0 preinstall
+> sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+
+Use pnpm instead
+npm error code 1
+npm error path /Users/builder/clone
+npm error command failed
+npm error command sh -c sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+npm error A complete log of this run can be found in: /Users/builder/.npm/_logs/2026-07-22T18_44_30_341Z-debug-0.log
+
+
+Build failed :|
+Step 2 script `Install dependencies` exited with status code 1
