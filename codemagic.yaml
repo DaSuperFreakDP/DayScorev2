@@ -17,7 +17,7 @@ workflows:
       - name: Generate iOS project
         script: |
           cd artifacts/journal-app
-          pnpm exec expo prebuild --platform ios --non-interactive
+          CI=1 pnpm exec expo prebuild --platform ios
 
       - name: Install CocoaPods
         script: |
