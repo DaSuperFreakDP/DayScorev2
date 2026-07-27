@@ -1,0 +1,56 @@
+workflows:
+  ios-build:
+    name: iOS Build
+    max_build_duration: 60
+
+    environment:
+      node: 20
+      xcode: latest
+      groups:
+        - dayscore
+      vars:
+        CI: "true"
+
+    scripts:
+      - name: Install dependencies
+        script: |
+          export COREPACK_ENABLE=0
+          if ! command -v pnpm >/dev/null 2>&1; then
+            npm install -g pnpm@10.26.1
+          fi
+          pnpm install --no-frozen-lockfile --ignore-scripts
+
+      - name: Generate iOS project
+        script: |
+          cd artifacts/journal-app
+          CI=1 pnpm exec expo prebuild --platform ios --no-install --skip-dependency-update expo,react,react-native
+
+      - name: Install CocoaPods
+        script: |
+          cd artifacts/journal-app/ios
+          pod install
+
+      - name: Build archive
+        script: |
+          cd artifacts/journal-app
+          export NODE_BINARY=$(which node)
+
+          xcodebuild \
+            -workspace ios/*.xcworkspace \
+            -scheme $(ls ios | grep xcodeproj | sed 's/.xcodeproj//') \
+            -configuration Release \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            archive \
+            -archivePath ../../build/App.xcarchive
+
+      - name: Create unsigned IPA
+        script: |
+          mkdir -p build/Payload
+          cp -R build/App.xcarchive/Products/Applications/*.app build/Payload/
+          cd build
+          zip -r DayScore.ipa Payload
+
+    artifacts:
+      - build/*.ipa
